@@ -188,7 +188,10 @@ include('../inc/topbar.php');
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 form-group mb-2">
-
+                                        <p>
+                                            <label for="pdate">Date of Purchase:</label><br>
+                                            <input type="date" name="pdate">
+                                        </p>
                                         </div>
                                     </div>
                                     <div class="row d-flex flex-wrap">
