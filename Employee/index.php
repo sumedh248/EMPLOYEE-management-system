@@ -156,6 +156,19 @@ if (empty($_SESSION['login_email'])) {
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-3">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5><span class="label label-info pull-right">JOINING DATE</span>
+                                </h5>
+                            </div>
+
+                            <div class="ibox-content">
+                                <h3 class="no-margins"><?php echo $joiningdate; ?></h3>
+                                <small> </small>
+                            </div>
+                        </div>
+                    </div>
 
                     </div>
                 <div class="footer">

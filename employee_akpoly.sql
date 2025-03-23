@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2025 at 10:43 AM
+-- Generation Time: Mar 23, 2025 at 07:49 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -45,15 +45,17 @@ CREATE TABLE `tblemployee` (
   `gross_pay` varchar(60) NOT NULL,
   `status` varchar(1) NOT NULL,
   `leave_status` varchar(20) NOT NULL,
-  `photo` varchar(5000) NOT NULL
+  `photo` varchar(5000) NOT NULL,
+  `joiningdate` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tblemployee`
 --
 
-INSERT INTO `tblemployee` (`id`, `employeeID`, `fullname`, `password`, `sex`, `email`, `dob`, `phone`, `address`, `qualification`, `dept`, `employee_type`, `date_appointment`, `basic_salary`, `gross_pay`, `status`, `leave_status`, `photo`) VALUES
-(9, 'STAFF/FKP/2025/1581', 'ram misra', 'Ram@1234', 'Male', 'main12@gmail.com', '24/8/2002', '3636363636', 'KM', 'GRADUATEED', 'Security', 'Academic', '2/2/2000', '2000000', '30000', '1', 'Not Available', 'uploadImage/Profile/WhatsApp Image 2024-11-26 at 15.01.13_ba0d946f.jpg');
+INSERT INTO `tblemployee` (`id`, `employeeID`, `fullname`, `password`, `sex`, `email`, `dob`, `phone`, `address`, `qualification`, `dept`, `employee_type`, `date_appointment`, `basic_salary`, `gross_pay`, `status`, `leave_status`, `photo`, `joiningdate`) VALUES
+(9, 'STAFF/FKP/2025/1581', 'ram misra', 'Ram@1234', 'Male', 'main12@gmail.com', '24/8/2002', '3636363636', 'KM', 'GRADUATEED', 'Security', 'Academic', '2/2/2000', '2000000', '30000', '1', 'Not Available', 'uploadImage/Profile/WhatsApp Image 2024-11-26 at 15.01.13_ba0d946f.jpg', '2025-03-24'),
+(11, 'STAFF/FKP/2025/1737', 'mayur', 'Mayur123', 'Male', 'main132@gmail.com', '', '03636363636', '', '', 'Student Affairs', 'Academic', '', '300000000', '30000000', '', 'Not Available', '', '2025-03-24');
 
 -- --------------------------------------------------------
 
@@ -131,7 +133,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `tblemployee`
 --
 ALTER TABLE `tblemployee`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tblleave`

@@ -4,7 +4,7 @@ include('../inc/topbar.php');
     if(isset($_POST["btnsubmit"])){
          
     $employeeID= 'STAFF/FKP/'.date("Y").'/'.rand(1000,5009);  
-    $sql = 'INSERT INTO tblemployee(employeeID,fullname,password,sex,email,dob,phone,address,qualification,dept,employee_type,date_appointment,basic_salary,gross_pay,status,leave_status) VALUES(:employeeID,:fullname,:password,:sex,:email,:dob,:phone,:address,:qualification,:dept,:employee_type,:date_appointment,:basic_salary,:gross_pay,:status,:leave_status)';
+    $sql = 'INSERT INTO tblemployee(employeeID,fullname,password,sex,email,dob,phone,address,qualification,dept,employee_type,date_appointment,basic_salary,gross_pay,status,leave_status,joiningdate) VALUES(:employeeID,:fullname,:password,:sex,:email,:dob,:phone,:address,:qualification,:dept,:employee_type,:date_appointment,:basic_salary,:gross_pay,:status,:leave_status,:joiningdate)';
     $statement = $dbh->prepare($sql);
     $statement->execute([
 	':employeeID' => $employeeID ,
@@ -22,7 +22,9 @@ include('../inc/topbar.php');
     ':basic_salary' => $_POST['txtbasic_salary'],
 	':gross_pay' =>  $_POST['txtgross_pay'],
     ':leave_status' => 'Not Available',
-    ':status' => ''
+    ':status' => '',
+    ':joiningdate' => $_POST['joiningdate'],
+
     ]);
     if ($statement){
       $_SESSION['success']='Registration was Successful';
@@ -175,8 +177,17 @@ include('../inc/topbar.php');
                                         </div>
                                         <div class="col-lg-6 col-md-12 form-group mb-2">
                                             <div class="controls">
-                                            <input class="form-control" type="number" placeholder="Gross Pass" required data-validation-required-message="Gross Pay is required" data-val="true" data-val-required="The Gross Pay field is required." id="txtgross_pay" name="txtgross_pay" value="">
 
+                                            <input class="form-control" type="number" placeholder="Gross Pass" required data-validation-required-message="Gross Pay is required" data-val="true" data-val-required="The Gross Pay field is required." id="txtgross_pay" name="txtgross_pay" value="">
+                                            
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 form-group mb-2">
+                                            <div class="controls">
+                                            <p>
+                                            <label for="pdate">Date of JOINING:</label><br>
+                                            <input class="form-control" type="date" placeholder="JOININGDATE" required data-validation-required-message="JOININGDATE is required" data-val="true" data-val-required="The joining date field is required." id="joiningdate" name="joiningdate" value="">
+                                        </p>
                                             </div>
                                         </div>
 
@@ -188,10 +199,7 @@ include('../inc/topbar.php');
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 form-group mb-2">
-                                        <p>
-                                            <label for="pdate">Date of Purchase:</label><br>
-                                            <input type="date" name="pdate">
-                                        </p>
+                                        
                                         </div>
                                     </div>
                                     <div class="row d-flex flex-wrap">

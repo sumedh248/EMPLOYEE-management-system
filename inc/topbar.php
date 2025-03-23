@@ -20,6 +20,7 @@ $employeeID=$rowaccess['employeeID'];
 $leave_status=$rowaccess['leave_status'];  
 $basic_salary=$rowaccess['basic_salary']; 
 $gross_pay=$rowaccess['gross_pay']; 
+$joiningdate=$rowaccess['joiningdate']; 
 
 
 $logo='image/logo.png';
