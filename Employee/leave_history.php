@@ -112,6 +112,13 @@ else {return false;
                             <strong>Leave History</strong></li>
                     </ol>
                 </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <span class="m-r-sm text-muted welcome-message"><?php echo $leaves; ?> LEAVES REMAINED</span>
+                    </li>
+                    <li class="dropdown">
+
+                </ul>
                 <div class="col-lg-2">
 
                 </div>

@@ -4,7 +4,7 @@ include('../inc/topbar.php');
     if(isset($_POST["btnsubmit"])){
          
     $employeeID= 'STAFF/FKP/'.date("Y").'/'.rand(1000,5009);  
-    $sql = 'INSERT INTO tblemployee(employeeID,fullname,password,sex,email,dob,phone,address,qualification,dept,employee_type,date_appointment,basic_salary,gross_pay,status,leave_status,joiningdate) VALUES(:employeeID,:fullname,:password,:sex,:email,:dob,:phone,:address,:qualification,:dept,:employee_type,:date_appointment,:basic_salary,:gross_pay,:status,:leave_status,:joiningdate)';
+    $sql = 'INSERT INTO tblemployee(employeeID,fullname,password,sex,email,dob,phone,address,qualification,dept,employee_type,date_appointment,basic_salary,gross_pay,status,leave_status,joiningdate,leaves) VALUES(:employeeID,:fullname,:password,:sex,:email,:dob,:phone,:address,:qualification,:dept,:employee_type,:date_appointment,:basic_salary,:gross_pay,:status,:leave_status,:joiningdate,:leaves)';
     $statement = $dbh->prepare($sql);
     $statement->execute([
 	':employeeID' => $employeeID ,
@@ -24,7 +24,7 @@ include('../inc/topbar.php');
     ':leave_status' => 'Not Available',
     ':status' => '',
     ':joiningdate' => $_POST['joiningdate'],
-
+    ':leaves'=> 8
     ]);
     if ($statement){
       $_SESSION['success']='Registration was Successful';
