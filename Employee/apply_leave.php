@@ -131,6 +131,13 @@ $_SESSION['error'] ='Previous Leave Application is still pending';
                         <li class="active"><strong>Leave Application </strong></li>
                     </ol>
                 </div>
+                <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message"><?php echo $leaves ;?> LEAVES REMAINED</span>
+                </li>
+                <li class="dropdown">
+
+            </ul>
                 <div class="col-lg-2">
 
                 </div>
@@ -159,6 +166,13 @@ $_SESSION['error'] ='Previous Leave Application is still pending';
                             </a>
                         </div>
                     </div>
+
+                    <!-- box1 -->
+                     <?php
+
+                     if($leaves>0){
+
+                     ?>
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-sm-6 b-r">
@@ -196,6 +210,26 @@ $_SESSION['error'] ='Previous Leave Application is still pending';
                             </div>
                         </div>
                     </div>
+                    <?php
+                     }else{
+                    ?>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-sm-6 b-r">
+                              <h3 class="m-t-none m-b">LEAVES LIMIT EXTENDED!!! </h3>
+                                
+                            </div>
+                            <div class="col-sm-6">
+                                
+                                <p class="text-center">&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <?php
+                     }
+                     ?>
+                    <!-- boxend -->
                 </div>
             </div>
               <div class="col-lg-5"></div>
