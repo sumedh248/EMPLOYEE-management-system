@@ -37,4 +37,15 @@ $row_admin = $stmt->fetch();
 $admin_fullname=$row_admin['fullname'];  
 $admin_photo=$row_admin['photo'];  
 
+// leaves
+$currentMonth = date('Y-m');
+
+if (!isset($_SESSION['last_reset']) || $_SESSION['last_reset'] !== $currentMonth) {
+    $sql = "UPDATE tblemployee SET leaves = 8";
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute();
+
+    $_SESSION['last_reset'] = $currentMonth;
+}
+
 ?>
