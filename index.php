@@ -1,5 +1,5 @@
 <?php
-include('../inc/topbar.php');
+include('inc/topbar.php');
 
 session_start();
 $currentMonth = date('Y-m');
@@ -11,7 +11,7 @@ if (!isset($_SESSION['last_reset']) || $_SESSION['last_reset'] !== $currentMonth
 
     $_SESSION['last_reset'] = $currentMonth;
 }
-?>
+?> 
 
 <!DOCTYPE html>
 <html>
